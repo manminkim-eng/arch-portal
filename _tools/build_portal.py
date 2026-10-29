@@ -119,7 +119,7 @@ page = f'''<!DOCTYPE html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>ENGINEER KIM MANMIN · 건축 계산서 통합 포털</title>
+<title>ARCHITECT KIM MANMIN · 건축 계산서 통합 포털</title>
 <meta name="description" content="건축 계산서 통합 포털 — 인허가·법규 · 에너지 · 대가·감리·공기 10종 계산서와 근거 법령·기준 안내 | Engineer Kim Manmin">
 <meta name="theme-color" content="#14110b">
 <meta name="color-scheme" content="dark">
@@ -288,8 +288,8 @@ tbody th{{min-width:170px}}
 <header class="hd">
   <div class="pill"><i aria-hidden="true"></i>근거 조문 대조 {CHECKED} · 국가법령정보</div>
   <div class="brand">
-    <img src="icons/icon-192.png" alt="ENGINEER KIM MANMIN 로고" width="72" height="72">
-    <div class="brand-t"><div class="brand-e">Engineer</div><div class="brand-n">KIM MANMIN</div></div>
+    <img src="icons/icon-192.png" alt="ARCHITECT KIM MANMIN 로고" width="72" height="72">
+    <div class="brand-t"><div class="brand-e">Architect</div><div class="brand-n">KIM MANMIN</div></div>
   </div>
   <h1 class="ttl">건축 <b>계산서 통합 포털</b></h1>
   <p class="lead">인허가·법규 · 에너지 · 대가·감리·공기 계산서 {len(TOOLS)}종을 한곳에서 열고, 계산서마다 적용한 근거 법령과 고시를 확인합니다.</p>
