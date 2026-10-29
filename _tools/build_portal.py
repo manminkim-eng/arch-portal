@@ -120,7 +120,7 @@ page = f'''<!DOCTYPE html>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>ARCHITECT KIM MANMIN · 건축 계산서 통합 포털</title>
-<meta name="description" content="건축 계산서 통합 포털 — 인허가·법규 · 에너지 · 대가·감리·공기 10종 계산서와 근거 법령·기준 안내 | Engineer Kim Manmin">
+<meta name="description" content="건축 계산서 통합 포털 — 인허가·법규 · 에너지 · 대가·감리·공기 10종 계산서와 근거 법령·기준 안내 | Architect Kim Manmin">
 <meta name="theme-color" content="#14110b">
 <meta name="color-scheme" content="dark">
 <link rel="manifest" href="manifest.json">

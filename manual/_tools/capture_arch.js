@@ -13,7 +13,7 @@ window.__find=sel=>{if(sel.startsWith('nth:')){const [q,i]=sel.slice(4).split('|
 window.__tab=t=>{document.querySelector('.tab[data-tab="'+t+'"]').click();};`;
 const SHOTS=[
  {id:'s01_overview',pre:"__tab('all');window.scrollTo(0,0)",clip:'viewport',m:[['.pill','근거 조문 대조일'],['.ttl','포털 이름'],['.stats','요약 5칸'],['.tabs','분류 탭 · 근거 · 매뉴얼 · 앱 설치'],['nth:.tcard|0','계산서 카드']]},
- {id:'s02_header',clip:'.hd',m:[['.pill','근거 조문 대조일'],['.brand','ENGINEER KIM MANMIN'],['.ttl','건축 계산서 통합 포털'],['.lead','포털 설명']]},
+ {id:'s02_header',clip:'.hd',m:[['.pill','근거 조문 대조일'],['.brand','ARCHITECT KIM MANMIN'],['.ttl','건축 계산서 통합 포털'],['.lead','포털 설명']]},
  {id:'s03_tabs',clip:'.tabs',m:[['nth:.tab|0','전체 10'],['nth:.tab|1','인허가·법규 4'],['nth:.tab|2','에너지 2'],['nth:.tab|3','대가·감리·공기 4'],['nth:.tab|4','근거 법령·고시'],['nth:.tab-man|0','사용자 매뉴얼'],['#pwa-inst','앱 설치']]},
  {id:'s04_permit',clip:'#g-permit',m:[['card:용도변경','35 용도변경 판정'],['card:건폐율','36 건폐율 · 용적률'],['card:일조','38 일조 · 사선 제한'],['card:주차','40 부설주차장 법정대수']]},
  {id:'s05_energy',clip:'#g-energy',m:[['card:열관류율','31 열관류율 검토'],['card:EPI','39 에너지성능지표']]},
