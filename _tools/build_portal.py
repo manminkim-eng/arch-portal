@@ -26,7 +26,7 @@ TOOLS = [
     ("36", "permit", "건폐율 · 용적률", "Land Use", "Land-Use", "5.1.0", "#fbbf24",
      "용도지역과 도시·군계획조례 값으로 건폐율 · 용적률 한도를 계산합니다.",
      ["국토계획법 제77조 · 제78조", "시행령 제84조 · 제85조", "도시·군계획조례"]),
-    ("38", "permit", "일조 · 사선 제한", "Sunlight · Setback", "Architectural-line", "5.0.6", "#fb923c",
+    ("38", "permit", "일조 · 사선 제한", "Sunlight · Setback", "Architectural-line", "5.1.0", "#fb923c",
      "정북방향 인접 대지경계선 기준의 일조 높이 제한을 검토합니다.",
      ["건축법 제61조", "시행령 제86조", "건축조례"]),
     ("40", "permit", "부설주차장 법정대수", "Parking Lot Act", "Parking-Lot-Act", "5.1.1", "#facc15",
