@@ -18,8 +18,8 @@ const mmMatch = (req, opt) => caches.keys()
   .then((ks) => ks.reduce((p, k) => p.then((r) => r || caches.open(k).then((c) => c.match(req, opt))), Promise.resolve(undefined)))
   .then((r) => (r && r.type === 'opaque' && req && req.mode === 'cors') ? undefined : r);
 
-const CACHE_NAME   = 'manmin-arch-portal-v1.0.4';
-const STATIC_CACHE = 'manmin-arch-portal-static-v1.0.4';
+const CACHE_NAME   = 'manmin-arch-portal-v1.0.5';
+const STATIC_CACHE = 'manmin-arch-portal-static-v1.0.5';
 
 const PRECACHE_URLS = [
   './',
