@@ -1,4 +1,5 @@
 /* ═══════════════════════════════════════════════════════════════
+   v1.0.1 2026-10-30 — 아이콘 교체(업로드 로고 ARCHITECT) · 설치 이름 「건축 통합포털」 · 캐시명 v1.0.1
    v1.0.0 2026-10-30 — 신설 (기계설비 통합 포털 mech-portal v1.0.2 sw 구조 계승)
    Service Worker — 건축 계산서 통합 포털 · Engineer Kim Manmin
 ═══════════════════════════════════════════════════════════════ */
@@ -17,8 +18,8 @@ const mmMatch = (req, opt) => caches.keys()
   .then((ks) => ks.reduce((p, k) => p.then((r) => r || caches.open(k).then((c) => c.match(req, opt))), Promise.resolve(undefined)))
   .then((r) => (r && r.type === 'opaque' && req && req.mode === 'cors') ? undefined : r);
 
-const CACHE_NAME   = 'manmin-arch-portal-v1.0.0';
-const STATIC_CACHE = 'manmin-arch-portal-static-v1.0.0';
+const CACHE_NAME   = 'manmin-arch-portal-v1.0.1';
+const STATIC_CACHE = 'manmin-arch-portal-static-v1.0.1';
 
 const PRECACHE_URLS = [
   './',
@@ -37,7 +38,7 @@ const PRECACHE_URLS = [
 
 /* ── INSTALL ── */
 self.addEventListener('install', (event) => {
-  console.log('[SW] Installing arch-portal-v1.0.0...');
+  console.log('[SW] Installing arch-portal-v1.0.1...');
   event.waitUntil(
     caches.open(STATIC_CACHE)
       .then((cache) => Promise.allSettled(PRECACHE_URLS.map((u) => cache.add(mmReq(u)).catch((e) => console.warn('[SW] precache skip:', u, e)))).catch((e) => console.warn('[SW] Pre-cache 일부 실패:', e)))
