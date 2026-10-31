@@ -1,7 +1,7 @@
 {
   "name": "MANMIN 건축포털",
   "short_name": "건축포털",
-  "description": "건축 계산서 통합 포털 — 인허가·법규 · 에너지 · 대가·감리·공기 10종 by Architect Kim Manmin · Ver 1.0.1",
+  "description": "건축 계산서 통합 포털 — 인허가·법규 · 에너지 · 대가·감리·공기 10종 by Architect Kim Manmin · Ver 1.0",
   "start_url": "./",
   "display": "standalone",
   "orientation": "portrait-primary",
