@@ -15,7 +15,8 @@ with contextlib.redirect_stdout(io.StringIO()):
     D = runpy.run_path(os.path.join(HERE, '..', '..', '_tools', 'build_portal.py'))
 TOOLS, GROUPS, LAWS, APPVER, CHECKED = D['TOOLS'], D['GROUPS'], D['LAWS'], D['VER'], D['CHECKED']
 
-VER, DATE = 'Ver-1.0', '2026-10-30'
+VER, DATE = 'Ver-1.0', '2026-10-31'
+DATE0 = '2026-10-30'   # 매뉴얼 초판 · 종전 개정일
 PDF = '건축통합포털_사용자매뉴얼_Ver-1.0.pdf'
 APP_URL = 'https://manminkim-eng.github.io/arch-portal/'
 APP = '건축 계산서 통합 포털'
@@ -45,7 +46,7 @@ EXTRA_CSS = """<style>
 </style>"""
 GNAME = {g: n for g, n, _ in GROUPS}
 NG = {g: sum(1 for t in TOOLS if t[1] == g) for g, _, _ in GROUPS}
-tool_rows = [[GNAME[t[1]], t[0], f'<a href="{G}{t[4]}/" target="_blank" rel="noopener">{t[2]}</a>', 'Ver ' + t[5], ' · '.join(t[8]),
+tool_rows = [[GNAME[t[1]], t[0], f'<a href="{G}{t[4]}/" target="_blank" rel="noopener">{t[2]}</a>', 'Ver ' + '.'.join(t[5].split('.')[:2]), ' · '.join(t[8]),
               f'<a href="{G}{t[4]}/manual/" target="_blank" rel="noopener">매뉴얼</a>'] for t in TOOLS]
 law_rows = [[n, k, d, a, t] for n, k, d, a, t in LAWS]
 TOC = [
@@ -61,7 +62,7 @@ S_ = []
 S_.append(f"""{EXTRA_CSS}<section class="ch" id="ch0"><h2><span class="n">00</span>이 매뉴얼에 대하여</h2>
 <p class="lead">{APP}은 용도변경 · 건폐율·용적률 · 일조 · 부설주차장 · 열관류율 · 에너지성능지표 · 설계·감리 대가 · 해체감리 · 상주감리 · 공사기간까지 <b>MANMIN 건축 계산서 {len(TOOLS)}종의 진입 화면</b>입니다. 포털은 계산하지 않습니다. 카드를 눌러 계산서로 들어가고, 계산서마다 적용한 근거 법령과 고시를 한 화면에서 확인합니다.</p>
 {K(T([
- ['대상 프로그램', f'{APP} <b>Ver {APPVER}</b>'],
+ ['대상 프로그램', f'{APP} <b>Ver {APPVER[:3]}</b>'],
  ['접속 주소', f'<a href="{APP_URL}" target="_blank" rel="noopener">manminkim-eng.github.io/arch-portal</a>'],
  ['매뉴얼 판', f'<b>{VER}</b> · {DATE} · 작성 김만민 건축사(㈜대성건축사사무소)'],
  ['내려받기', f'<a href="{PDF}" download>PDF(A4)</a> · <a href="../index.html">포털 열기</a>'],
@@ -100,13 +101,13 @@ S_.append(f"""<section class="ch" id="ch2"><h2><span class="n">02</span>1분 따
 S_.append(f"""<section class="ch" id="ch3"><h2><span class="n">03</span>화면별 기능</h2>
 <h3 id="s3-1">3-1. 머리</h3>
 {F('s02_header', '머리')}
-<p>맨 위 표시줄은 근거 조문을 국가법령정보와 대조한 날짜({CHECKED})입니다.</p>
+<p>맨 위 표시줄은 근거 조문을 국가법령정보와 대조한 날짜({CHECKED})입니다. 로고는 포털 앱 아이콘이라 홈 화면에 설치한 아이콘과 같습니다.</p>
 <h3 id="s3-2">3-2. 분류 탭</h3>
 {F('s03_tabs', '탭 막대')}
 <p>「전체 {len(TOOLS)}」 · 「인허가·법규 {NG['permit']}」 · 「에너지 {NG['energy']}」 · 「대가·감리·공기 {NG['fee']}」는 누르면 해당 묶음만 보여 줍니다. 「근거 법령·고시」는 아래 근거표로 이동하고, 「사용자 매뉴얼」은 이 문서를 새 창으로 엽니다(온라인 전용). 「앱 설치」는 설치할 수 있는 브라우저에서만 나타납니다(<a href="#s3-9">3-9</a>).</p>
 <h3 id="s3-3">3-3. 계산서 카드</h3>
 {F('s07_card', '계산서 카드 구성')}
-<p>카드 위 번호 「A · 35」는 홈페이지 도구 허브의 공종 표기(A)와 개발 폴더 번호(35)입니다. 버전은 계산서의 현재 판이고, 칩은 그 계산서가 산출근거로 인용하는 법령 · 고시입니다.</p>
+<p>카드 위 번호 「A · 35」는 홈페이지 도구 허브의 공종 표기(A)와 개발 폴더 번호(35)입니다. 버전은 계산서 판의 앞 두 자리(Ver 5.x — 셋째 자리 배포 때는 그대로)이고, 칩은 그 계산서가 산출근거로 인용하는 법령 · 고시입니다.</p>
 <h3 id="s3-4">3-4. 인허가·법규</h3>
 {F('s04_permit', f'인허가·법규 카드 {NG["permit"]}장')}
 <h3 id="s3-5">3-5. 에너지</h3>
@@ -160,7 +161,8 @@ S_.append(f"""<section class="ch" id="ch5"><h2><span class="n">05</span>문제 �
 S_.append(f"""<section class="ch" id="ch6"><h2><span class="n">부록</span></h2>
 <h3 id="a1">A1. 버전 변경 내역</h3>
 {K(T([
- [f'Ver {APPVER} · 매뉴얼 {VER} ({DATE})', f'신설 — 계산서 {len(TOOLS)}종 · 분류 3 · 근거 법령 · 고시표 · 개정 예정 안내 · 앱 설치 단추 · 사용자 매뉴얼'],
+ [f'Ver 1.0.8 · 매뉴얼 {VER} ({DATE})', '화면 캡처 전면 재촬영 — 포털 앱 아이콘(어두운 바탕 · 공종색 선) · 4개 포털 통일 머리 · 탭 단추 · 글자 크기 · 공종색 카드 · 카드 판 두 자리(Ver 5.x) · 바탕화면 이름 「MANMIN …」 · 매뉴얼 서체 Pretendard(포털 본문과 같은 서체)'],
+ [f'Ver {APPVER} · 매뉴얼 {VER} ({DATE0})', f'신설 — 계산서 {len(TOOLS)}종 · 분류 3 · 근거 법령 · 고시표 · 개정 예정 안내 · 앱 설치 단추 · 사용자 매뉴얼'],
 ], ['버전', '내용']))}
 <h3 id="a2">A2. 용어</h3>
 {BR(K(T([
