@@ -8,14 +8,14 @@ MANMIN 건축 계산서 통합 포털 — index.html 생성기
 """
 import html, os, datetime
 
-VER = "1.0.9"   # 1.0.9 (2026-10-31) 생성기 동기화 — 24장 · 25-6 수정을 템플릿에 반영(출력 = 배포 index.html) / 종전 1.0.0 (2026-10-30) 신설 — 계산서 10종 · 분류 3 · 근거 법령 · 앱 설치 단추 · 사용자 매뉴얼 연결
+VER = "1.0.11"  # 1.0.11 (2026-11-09) 안전점검등 대가 산출기(48) 추가 — 계산서 11종 · 대가 5 · 시설물안전법 · 지침 고시 행 / 1.0.9 (2026-10-31) 생성기 동기화 — 24장 · 25-6 수정을 템플릿에 반영(출력 = 배포 index.html) / 종전 1.0.0 (2026-10-30) 신설 — 계산서 10종 · 분류 3 · 근거 법령 · 앱 설치 단추 · 사용자 매뉴얼 연결
 CHECKED = "2026-10-30"          # 근거 조문 대조일
 BASE = "https://manminkim-eng.github.io"
 
 GROUPS = [
     ("permit", "인허가·법규", "용도변경 · 건폐율·용적률 · 일조 · 주차"),
     ("energy", "에너지",       "열관류율 · 에너지성능지표"),
-    ("fee",    "대가·감리·공기", "설계·감리 대가 · 해체감리 · 상주감리 · 공사기간"),
+    ("fee",    "대가·감리·공기", "설계·감리 대가 · 해체감리 · 안전점검 대가 · 상주감리 · 공사기간"),
 ]
 
 # no, group, name, en, repo, ver, accent, desc(정성 서술 — 수치 기재 금지), basis(근거 칩)
@@ -44,6 +44,9 @@ TOOLS = [
     ("32", "fee", "해체공사 감리대가", "Demolition Supervision", "demolition-calc", "5.0.11", "#f87171",
      "해체공사비 요율과 실비정액가산 방식으로 해체공사 감리대가를 산출합니다.",
      ["건축물관리법 제31조 · 제32조", "해체감리 기준 제23조 · 별표 2"]),
+    ("48", "fee", "안전점검 대가", "Safety Inspection Fee", "safety-inspection-fee", "1.0.4", "#f472b6",
+     "건축물 안전점검 · 정밀안전진단 대가를 기준인원수 기반 정액적산방식으로 산출합니다.",
+     ["시설물안전법 제37조", "지침 고시 제2026-444호 별표 22 ~ 27"]),
     ("33", "fee", "상주감리 대가", "Resident Supervision", "arch-supervision", "5.0.11", "#c084fc",
      "상주감리 대상 여부를 판정하고 감리원 배치에 따른 대가를 산출합니다.",
      ["건축법 제25조", "시행령 제19조 ⑤", "건축공사 감리세부기준"]),
@@ -68,6 +71,8 @@ LAWS = [
      "제2026-360호 · 2026-07-08 시행", "제15조(에너지성능지표) · 별표 1(지역별 건축물 부위의 열관류율표)", "31 · 39"),
     ("건축물관리법 · 해체계획서 작성 및 감리업무 등에 관한 기준", "법률 · 고시",
      "법 2025-06-04 시행 · 고시 제2022-446호 2022-08-04 시행", "법 제31조(건축물 해체공사감리자의 지정 등) · 제32조(해체공사감리자의 업무 등) · 고시 제23조(감리대가 기준) · 별표 2", "32"),
+    ("시설물의 안전 및 유지관리에 관한 특별법 · 시설물의 안전 및 유지관리 실시 등에 관한 지침", "법률 · 고시",
+     "법 2026-08-28 시행 · 고시 제2026-444호 2026-08-21 발령", "법 제37조(안전점검등 비용의 산정기준) · 고시 제55조 ~ 제63조 · 별표 22 ~ 27(대가 산정)", "48"),
     ("건축사법 · 공공발주사업에 대한 건축사의 업무범위와 대가기준", "법률 · 고시",
      "법 2026-09-18 시행 · 고시 2020-09-14 발령", "법 제19조의3(건축사의 업무범위 및 대가 기준)", "30 · 33"),
     ("엔지니어링산업 진흥법 · 엔지니어링사업대가의 기준", "법률 · 고시",
@@ -128,7 +133,7 @@ page = f'''<!DOCTYPE html>
 <meta property="og:site_name" content="MANMIN ENGINEERING">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:title" content="ARCHITECT KIM MANMIN · 건축 계산서 통합 포털">
-<meta property="og:description" content="건축 계산서 통합 포털 — 인허가·법규 · 에너지 · 대가·감리·공기 10종 계산서와 근거 법령·기준 안내 | Architect Kim Manmin">
+<meta property="og:description" content="건축 계산서 통합 포털 — 인허가·법규 · 에너지 · 대가·감리·공기 {len(TOOLS)}종 계산서와 근거 법령·기준 안내 | Architect Kim Manmin">
 <meta property="og:url" content="https://manminkim-eng.github.io/arch-portal/">
 <meta property="og:image" content="https://manminkim-eng.github.io/arch-portal/og-card.jpg">
 <meta property="og:image:secure_url" content="https://manminkim-eng.github.io/arch-portal/og-card.jpg">
@@ -138,9 +143,9 @@ page = f'''<!DOCTYPE html>
 <meta property="og:image:alt" content="ARCHITECT KIM MANMIN · 건축 계산서 통합 포털">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="ARCHITECT KIM MANMIN · 건축 계산서 통합 포털">
-<meta name="twitter:description" content="건축 계산서 통합 포털 — 인허가·법규 · 에너지 · 대가·감리·공기 10종 계산서와 근거 법령·기준 안내 | Architect Kim Manmin">
+<meta name="twitter:description" content="건축 계산서 통합 포털 — 인허가·법규 · 에너지 · 대가·감리·공기 {len(TOOLS)}종 계산서와 근거 법령·기준 안내 | Architect Kim Manmin">
 <meta name="twitter:image" content="https://manminkim-eng.github.io/arch-portal/og-card.jpg">
-<meta name="description" content="건축 계산서 통합 포털 — 인허가·법규 · 에너지 · 대가·감리·공기 10종 계산서와 근거 법령·기준 안내 | Architect Kim Manmin">
+<meta name="description" content="건축 계산서 통합 포털 — 인허가·법규 · 에너지 · 대가·감리·공기 {len(TOOLS)}종 계산서와 근거 법령·기준 안내 | Architect Kim Manmin">
 <meta name="theme-color" content="#14110b">
 <meta name="color-scheme" content="dark">
 <link rel="manifest" href="manifest.json">
@@ -365,7 +370,7 @@ tbody th{{min-width:170px}}
 </header>
 
 <div class="stats">
-  <div class="st"><div class="st-n">{len(TOOLS)}</div><div class="st-l">인허가 4 · 에너지 2 · 대가 4</div></div>
+  <div class="st"><div class="st-n">{len(TOOLS)}</div><div class="st-l">인허가 4 · 에너지 2 · 대가 5</div></div>
   <div class="st"><div class="st-n">{len(LAWS)}</div><div class="st-l">근거 법령 · 고시</div></div>
   <div class="st"><div class="st-n">조례</div><div class="st-l">지자체 값 반영</div></div>
   <div class="st"><div class="st-n">PWA</div><div class="st-l">오프라인 지원</div></div>
