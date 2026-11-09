@@ -1,4 +1,5 @@
 /* ═══════════════════════════════════════════════════════════════
+   v1.0.15 2026-11-09 — 사용자 매뉴얼 Ver-1.1(계산서 12종 · 근거 13행 · 화면 14장 재촬영 · PDF Ver-1.1) · 캐시명 v1.0.15 (화면 · 카드 변경 없음)
    v1.0.14 2026-11-09 — 장애인 편의시설 카드 Ver 1.2 · 사용자 매뉴얼 단추 · 캐시명 v1.0.14
    v1.0.13 2026-11-09 — 장애인 편의시설 카드 Ver 1.1(세부기준 그림 18) · 캐시명 v1.0.13
    v1.0.12 2026-11-09 — 장애인 편의시설 설치기준 검토(43) 카드 · 장애인등편의법 근거 행(계산서 12종) · 캐시명 v1.0.12
@@ -24,8 +25,8 @@ const mmMatch = (req, opt) => caches.keys()
   .then((ks) => ks.reduce((p, k) => p.then((r) => r || caches.open(k).then((c) => c.match(req, opt))), Promise.resolve(undefined)))
   .then((r) => (r && r.type === 'opaque' && req && req.mode === 'cors') ? undefined : r);
 
-const CACHE_NAME   = 'manmin-arch-portal-v1.0.14';
-const STATIC_CACHE = 'manmin-arch-portal-static-v1.0.14';
+const CACHE_NAME   = 'manmin-arch-portal-v1.0.15';
+const STATIC_CACHE = 'manmin-arch-portal-static-v1.0.15';
 
 const PRECACHE_URLS = [
   './',

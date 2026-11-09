@@ -14,14 +14,14 @@ window.__tab=t=>{document.querySelector('.tab[data-tab="'+t+'"]').click();};`;
 const SHOTS=[
  {id:'s01_overview',pre:"__tab('all');window.scrollTo(0,0)",clip:'viewport',m:[['.pill','근거 조문 대조일'],['.ttl','포털 이름'],['.stats','요약 5칸'],['.tabs','분류 탭 · 근거 · 매뉴얼 · 앱 설치'],['nth:.tcard|0','계산서 카드']]},
  {id:'s02_header',clip:'.hd',m:[['.pill','근거 조문 대조일'],['.brand','ARCHITECT KIM MANMIN'],['.ttl','건축 계산서 통합 포털'],['.lead','포털 설명']]},
- {id:'s03_tabs',clip:'.tabs',m:[['nth:.tab|0','전체 10'],['nth:.tab|1','인허가·법규 4'],['nth:.tab|2','에너지 2'],['nth:.tab|3','대가·감리·공기 4'],['nth:.tab|4','근거 법령·고시'],['nth:.tab-man|0','사용자 매뉴얼'],['#pwa-inst','앱 설치']]},
- {id:'s04_permit',clip:'#g-permit',m:[['card:용도변경','35 용도변경 판정'],['card:건폐율','36 건폐율 · 용적률'],['card:일조','38 일조 · 사선 제한'],['card:주차','40 부설주차장 법정대수']]},
+ {id:'s03_tabs',clip:'.tabs',m:[['nth:.tab|0','전체 12'],['nth:.tab|1','인허가·법규 5'],['nth:.tab|2','에너지 2'],['nth:.tab|3','대가·감리·공기 5'],['nth:.tab|4','근거 법령·고시'],['nth:.tab-man|0','사용자 매뉴얼'],['#pwa-inst','앱 설치']]},
+ {id:'s04_permit',clip:'#g-permit',m:[['card:용도변경','35 용도변경 판정'],['card:건폐율','36 건폐율 · 용적률'],['card:일조','38 일조 · 사선 제한'],['card:주차','40 부설주차장 법정대수'],['card:편의시설','43 장애인 편의시설']]},
  {id:'s05_energy',clip:'#g-energy',m:[['card:열관류율','31 열관류율 검토'],['card:EPI','39 에너지성능지표']]},
- {id:'s06_fee',clip:'#g-fee',m:[['card:설계 · 감리','30 설계 · 감리 대가'],['card:해체','32 해체공사 감리대가'],['card:상주','33 상주감리 대가'],['card:공사기간','34 공사기간 산정']]},
+ {id:'s06_fee',clip:'#g-fee',m:[['card:설계 · 감리','30 설계 · 감리 대가'],['card:해체','32 해체공사 감리대가'],['card:안전점검','48 안전점검 대가'],['card:상주','33 상주감리 대가'],['card:공사기간','34 공사기간 산정']]},
  {id:'s07_card',clip:'nth:.tcard|0',m:[['nth:.tc-no|0','공종 번호(A · 폴더 번호)'],['nth:.tc-ver|0','계산서 현재 버전'],['nth:.tc-name|0','계산서 이름'],['nth:.tc-desc|0','계산 내용'],['nth:.tc-chips|0','근거 기준 칩'],['nth:.tc-man|0','사용자 매뉴얼(새 창)'],['nth:.tc-go|0','계산서 열기']]},
- {id:'s08_law',clip:'#law',m:[['row:건축법 시행령','건축법 · 시행령'],['row:국토의 계획','국토계획법 · 시행령'],['row:주차장법','주차장법 · 시행령'],['row:에너지절약','에너지절약설계기준 — 제2026-360호'],['row:건축물관리법','해체감리'],['row:건축사법','건축사 대가기준'],['nth:.note|1','개정 예정 — 건축법 제61조①']]},
+ {id:'s08_law',clip:'#law',m:[['row:건축법 시행령','건축법 · 시행령'],['row:국토의 계획','국토계획법 · 시행령'],['row:주차장법','주차장법 · 시행령'],['row:에너지절약','에너지절약설계기준 — 제2026-360호'],['row:장애인','장애인등편의법 · 시행령 · 시행규칙'],['row:건축물관리법','해체감리'],['row:시설물의 안전','시설물안전법 · 지침 고시 제2026-444호'],['row:건축사법','건축사 대가기준'],['nth:.note|1','개정 예정 — 건축법 제61조①']]},
  {id:'s13_install_bar',pre:"document.getElementById('mm-hidebar').disabled=true;window.scrollTo(0,0)",wait:500,clip:'#pwa-bar',post:"document.getElementById('mm-hidebar').disabled=false",m:[['.pwa-bar-t','설치 안내'],['#pwa-no','닫기 — 이 세션 동안 다시 띄우지 않음'],['#pwa-yes','설치 — 브라우저 설치 창']]},
- {id:'s09_permit_tab',pre:"__tab('permit');window.scrollTo(0,0)",wait:600,clip:'viewport',post:"__tab('all')",m:[['nth:.tab|1','인허가·법규만 보기'],['#g-permit','인허가·법규 카드 4장']]},
+ {id:'s09_permit_tab',pre:"__tab('permit');window.scrollTo(0,0)",wait:600,clip:'viewport',post:"__tab('all')",m:[['nth:.tab|1','인허가·법규만 보기'],['#g-permit','인허가·법규 카드 5장']]},
 ];
 (async()=>{
  const s=await server(repo,PORT);const b=await chromium.launch();
