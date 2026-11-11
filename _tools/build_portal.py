@@ -35,7 +35,7 @@ TOOLS = [
     ("43", "permit", "장애인 편의시설", "Barrier-Free Facilities", "Barrier-Free-Facilities", "6.1.0", "#a3e635",
      "용도 · 규모 · 공사 구분으로 편의시설 설치 대상과 의무 · 권장 편의시설, BF 인증 의무를 판정합니다.",
      ["장애인등편의법 제7조 ~ 제10조의2", "시행령 별표 1 · 2", "시행규칙 별표 1"]),
-    ("44", "permit", "건축허가 조서", "Building Permit Report", "Building-Permit-Report", "6.1.1", "#e8d3a6",
+    ("44", "permit", "건축허가 조서", "Building Permit Report", "Building-Permit-Report", "6.1.2", "#e8d3a6",
      "설계개요 PDF로 별지 제23호서식 조서와 한국건축규정 체크리스트를 작성하고, 개요 값으로 답을 근거와 함께 먼저 제안합니다.",
      ["건축법 제27조", "시행규칙 제21조 · 별지 제23호서식", "한국건축규정 별표 2"]),
     ("31", "energy", "열관류율 검토", "U-Value Review", "u-value-app-", "5.0.14", "#34d399",
