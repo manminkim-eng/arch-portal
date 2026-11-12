@@ -1,4 +1,5 @@
 /* ═══════════════════════════════════════════════════════════════
+   v1.0.22 2026-11-12 — 카드 판 업무대가 · 공기산정 · 성능지표 · 상주감리 6.1.1 · 열관류율 6.1.2(정밀검토 B17 · B10 · §25-6-78 · 79) · 캐시명 v1.0.22
    v1.0.21 2026-11-12 — 카드 판 36 · 30 · 33 · 34 Ver 6.1 · 31 · 40 6.1.1(정밀검토 B5 · B6 · §25-6-76 · 77) · 캐시명 v1.0.21
    v1.0.20 2026-11-12 — 카드 판 31 · 39 · 32 · 48 Ver 6.1 · 43 6.1.1(정밀검토 B15 · §25-6-75) · 캐시명 v1.0.20
    v1.0.19 2026-11-12 — 카드 판 40 주차장 Ver 6.1(정밀검토 B13 · §25-6-74) · 캐시명 v1.0.19
@@ -31,8 +32,8 @@ const mmMatch = (req, opt) => caches.keys()
   .then((ks) => ks.reduce((p, k) => p.then((r) => r || caches.open(k).then((c) => c.match(req, opt))), Promise.resolve(undefined)))
   .then((r) => (r && r.type === 'opaque' && req && req.mode === 'cors') ? undefined : r);
 
-const CACHE_NAME   = 'manmin-arch-portal-v1.0.21';
-const STATIC_CACHE = 'manmin-arch-portal-static-v1.0.21';
+const CACHE_NAME   = 'manmin-arch-portal-v1.0.22';
+const STATIC_CACHE = 'manmin-arch-portal-static-v1.0.22';
 
 const PRECACHE_URLS = [
   './',
