@@ -1,4 +1,5 @@
 /* ═══════════════════════════════════════════════════════════════
+   v1.0.28 2026-11-13 — 카드 판 44 허가조서 6.1.12(조례 별표 9곳 · 천안 건폐율 · 용적률, §25-6-90) · 캐시명 v1.0.28
    v1.0.27 2026-11-13 — 카드 판 44 허가조서 6.1.11(html2canvas SRI, §25-6-89) · 캐시명 v1.0.27
    v1.0.26 2026-11-13 — 카드 판 44 허가조서 6.1.10(전남 · 충남 조례 51곳, §25-6-88) · 캐시명 v1.0.26
    v1.0.25 2026-11-12 — 카드 판 12종 한 단계씩(html2canvas SRI, 정밀검토 B8 · §25-6-87) · 캐시명 v1.0.25
@@ -37,8 +38,8 @@ const mmMatch = (req, opt) => caches.keys()
   .then((ks) => ks.reduce((p, k) => p.then((r) => r || caches.open(k).then((c) => c.match(req, opt))), Promise.resolve(undefined)))
   .then((r) => (r && r.type === 'opaque' && req && req.mode === 'cors') ? undefined : r);
 
-const CACHE_NAME   = 'manmin-arch-portal-v1.0.27';
-const STATIC_CACHE = 'manmin-arch-portal-static-v1.0.27';
+const CACHE_NAME   = 'manmin-arch-portal-v1.0.28';
+const STATIC_CACHE = 'manmin-arch-portal-static-v1.0.28';
 
 const PRECACHE_URLS = [
   './',
