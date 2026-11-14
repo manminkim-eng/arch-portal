@@ -1,4 +1,5 @@
 /* ═══════════════════════════════════════════════════════════════
+   v1.0.31 2026-11-14 — 카드 판 44 허가조서 6.1.18(한국건축규정 적용 고시 날짜별 표기, §25-6-93) · 캐시명 v1.0.31
    v1.0.30 2026-11-13 — 카드 판 44 허가조서 6.1.17(1112 대조 개선 · 세부 호 자동 선택 · 매뉴얼 개정, §25-6-92) · 캐시명 v1.0.30
    v1.0.29 2026-11-13 — 카드 판 44 허가조서 6.1.16(자동 선판정 전체 항목 · 매뉴얼 개정, §25-6-91) · 캐시명 v1.0.29
    v1.0.28 2026-11-13 — 카드 판 44 허가조서 6.1.12(조례 별표 9곳 · 천안 건폐율 · 용적률, §25-6-90) · 캐시명 v1.0.28
@@ -40,8 +41,8 @@ const mmMatch = (req, opt) => caches.keys()
   .then((ks) => ks.reduce((p, k) => p.then((r) => r || caches.open(k).then((c) => c.match(req, opt))), Promise.resolve(undefined)))
   .then((r) => (r && r.type === 'opaque' && req && req.mode === 'cors') ? undefined : r);
 
-const CACHE_NAME   = 'manmin-arch-portal-v1.0.30';
-const STATIC_CACHE = 'manmin-arch-portal-static-v1.0.30';
+const CACHE_NAME   = 'manmin-arch-portal-v1.0.31';
+const STATIC_CACHE = 'manmin-arch-portal-static-v1.0.31';
 
 const PRECACHE_URLS = [
   './',
