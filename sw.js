@@ -1,4 +1,5 @@
 /* ═══════════════════════════════════════════════════════════════
+   v1.0.34 2026-11-20 — 카드 판 32 해체감리 6.1.3 · 33 상주감리 6.1.5 · 48 안전대가 6.1.3(노임 적용연도 선택 · 매뉴얼 Ver-6.1, §25-6-98) · 캐시명 v1.0.34
    v1.0.33 2026-11-20 — 카드 판 44 허가조서 6.1.22(PDF 읽기 보강 · 매뉴얼 개정, §25-6-97) · 캐시명 v1.0.33
    v1.0.32 2026-11-19 — 카드 판 35 용도변경 6.1.4 · 44 허가조서 6.1.19(기록 누락 정리 · §25-6-96) · 캐시명 v1.0.32
    v1.0.31 2026-11-14 — 카드 판 44 허가조서 6.1.18(한국건축규정 적용 고시 날짜별 표기, §25-6-93) · 캐시명 v1.0.31
@@ -43,8 +44,8 @@ const mmMatch = (req, opt) => caches.keys()
   .then((ks) => ks.reduce((p, k) => p.then((r) => r || caches.open(k).then((c) => c.match(req, opt))), Promise.resolve(undefined)))
   .then((r) => (r && r.type === 'opaque' && req && req.mode === 'cors') ? undefined : r);
 
-const CACHE_NAME   = 'manmin-arch-portal-v1.0.33';
-const STATIC_CACHE = 'manmin-arch-portal-static-v1.0.33';
+const CACHE_NAME   = 'manmin-arch-portal-v1.0.34';
+const STATIC_CACHE = 'manmin-arch-portal-static-v1.0.34';
 
 const PRECACHE_URLS = [
   './',
