@@ -1,4 +1,5 @@
 /* ═══════════════════════════════════════════════════════════════
+   v1.0.36 2026-11-24 — 카드 판 38 일조사선 · 43 편의시설 6.1.4 · 40 주차장법 6.1.5(건축 1차 교차검증 반영, §25-6-109) · 캐시명 v1.0.36
    v1.0.35 2026-11-24 — 카드 판 44 허가조서 6.1.23(건축법 제61조 개정 메모 · 매뉴얼 v6.1.23, §25-6-108) · 캐시명 v1.0.35
    v1.0.34 2026-11-20 — 카드 판 32 해체감리 6.1.3 · 33 상주감리 6.1.5 · 48 안전대가 6.1.3(노임 적용연도 선택 · 매뉴얼 Ver-6.1, §25-6-98) · 캐시명 v1.0.34
    v1.0.33 2026-11-20 — 카드 판 44 허가조서 6.1.22(PDF 읽기 보강 · 매뉴얼 개정, §25-6-97) · 캐시명 v1.0.33
@@ -45,8 +46,8 @@ const mmMatch = (req, opt) => caches.keys()
   .then((ks) => ks.reduce((p, k) => p.then((r) => r || caches.open(k).then((c) => c.match(req, opt))), Promise.resolve(undefined)))
   .then((r) => (r && r.type === 'opaque' && req && req.mode === 'cors') ? undefined : r);
 
-const CACHE_NAME   = 'manmin-arch-portal-v1.0.35';
-const STATIC_CACHE = 'manmin-arch-portal-static-v1.0.35';
+const CACHE_NAME   = 'manmin-arch-portal-v1.0.36';
+const STATIC_CACHE = 'manmin-arch-portal-static-v1.0.36';
 
 const PRECACHE_URLS = [
   './',
