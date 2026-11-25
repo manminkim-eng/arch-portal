@@ -1,4 +1,6 @@
 /* ═══════════════════════════════════════════════════════════════
+   v1.0.39 2026-11-25 — 카드 판 35 · 32 · 48 · 33 · 근거표 전 행 대조 2026-11-25 · icon-96 미리 저장 · 설치 로그 캐시명 표기(건축 4차 교차검증 반영, §25-6-112) · 캐시명 v1.0.39
+   v1.0.38 2026-11-24 — 카드 판 30 · 34 6.1.5 · 엔지니어링사업대가 기준 제2026-124호(건축 3차, §25-6-111) · 캐시명 v1.0.38
    v1.0.37 2026-11-24 — 카드 판 36 국토이용 6.1.4 · 39 성능지표 6.1.5 · 31 열관류율 6.1.6(건축 2차 교차검증 반영, §25-6-110) · 캐시명 v1.0.37
    v1.0.36 2026-11-24 — 카드 판 38 일조사선 · 43 편의시설 6.1.4 · 40 주차장법 6.1.5(건축 1차 교차검증 반영, §25-6-109) · 캐시명 v1.0.36
    v1.0.35 2026-11-24 — 카드 판 44 허가조서 6.1.23(건축법 제61조 개정 메모 · 매뉴얼 v6.1.23, §25-6-108) · 캐시명 v1.0.35
@@ -47,13 +49,14 @@ const mmMatch = (req, opt) => caches.keys()
   .then((ks) => ks.reduce((p, k) => p.then((r) => r || caches.open(k).then((c) => c.match(req, opt))), Promise.resolve(undefined)))
   .then((r) => (r && r.type === 'opaque' && req && req.mode === 'cors') ? undefined : r);
 
-const CACHE_NAME   = 'manmin-arch-portal-v1.0.38';
-const STATIC_CACHE = 'manmin-arch-portal-static-v1.0.38';
+const CACHE_NAME   = 'manmin-arch-portal-v1.0.39';
+const STATIC_CACHE = 'manmin-arch-portal-static-v1.0.39';
 
 const PRECACHE_URLS = [
   './',
   './index.html',
   './manifest.json',
+  './icons/icon-96.png',
   './icons/icon-192.png',
   './icons/icon-512.png',
   './icons/apple-touch-icon.png',
@@ -67,7 +70,7 @@ const PRECACHE_URLS = [
 
 /* ── INSTALL ── */
 self.addEventListener('install', (event) => {
-  console.log('[SW] Installing arch-portal-v1.0.1...');
+  console.log('[SW] Installing ' + CACHE_NAME + '...');
   event.waitUntil(
     caches.open(STATIC_CACHE)
       .then((cache) => Promise.allSettled(PRECACHE_URLS.map((u) => cache.add(mmReq(u)).catch((e) => console.warn('[SW] precache skip:', u, e)))).catch((e) => console.warn('[SW] Pre-cache 일부 실패:', e)))
