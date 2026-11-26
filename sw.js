@@ -1,4 +1,5 @@
 /* ═══════════════════════════════════════════════════════════════
+   v1.0.41 2026-11-26 — 건축 설계검토(49) 카드(계산서 14종 · 인허가 7) · 근거 17행(건축법 시행령 행 제34조 · 제35조 · 제46조 · 제89조 · 제90조 · 제119조 · 피난방화규칙 · 설비규칙 행 추가, §25-6-120) · 캐시명 v1.0.41
    v1.0.40 (2026-11-25) — 헤더 고정 — 공통 원본 MM-HEADER v1.1 주입(태블릿 · 데스크톱만 — 폭 768px · 높이 600px 이상, 휴대폰은 고정 없음 · 머리+탭 sticky · 내리면 제목 한 줄+탭으로 접힘 · 다른 sticky 패널 top 보정) — 계산 · 인쇄 불변 · MIN 「추천안대로 승인」 · 「추천안대로 진행해줘」(모바일 제외) · 캐시명 v1.0.40 (종전 v1.0.39)
    v1.0.39 2026-11-25 — 카드 판 35 · 32 · 48 · 33 · 근거표 전 행 대조 2026-11-25 · icon-96 미리 저장 · 설치 로그 캐시명 표기(건축 4차 교차검증 반영, §25-6-112) · 캐시명 v1.0.39
    v1.0.38 2026-11-24 — 카드 판 30 · 34 6.1.5 · 엔지니어링사업대가 기준 제2026-124호(건축 3차, §25-6-111) · 캐시명 v1.0.38
@@ -50,8 +51,8 @@ const mmMatch = (req, opt) => caches.keys()
   .then((ks) => ks.reduce((p, k) => p.then((r) => r || caches.open(k).then((c) => c.match(req, opt))), Promise.resolve(undefined)))
   .then((r) => (r && r.type === 'opaque' && req && req.mode === 'cors') ? undefined : r);
 
-const CACHE_NAME   = 'manmin-arch-portal-v1.0.40';
-const STATIC_CACHE = 'manmin-arch-portal-static-v1.0.40';
+const CACHE_NAME   = 'manmin-arch-portal-v1.0.41';
+const STATIC_CACHE = 'manmin-arch-portal-static-v1.0.41';
 
 const PRECACHE_URLS = [
   './',
