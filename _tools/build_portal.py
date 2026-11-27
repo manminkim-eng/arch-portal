@@ -8,7 +8,7 @@ MANMIN 건축 계산서 통합 포털 — index.html 생성기
 """
 import html, os, datetime
 
-VER = "1.0.42"  # 1.0.42 (2026-11-27) 카드 판 44 허가조서 6.1.28 · 설명에 별지 제24호서식(사용승인조서) · 근거표 건축법 제16조 · 제26조, 시행령 제12조 ③, 시행규칙 제20조 · 별표 5 · 별지 제24호서식(준공 설계개요 선판정, LawMCP 2026-11-27 대조, §25-6-122) / 1.0.41 (2026-11-26) 건축 설계검토(49) 추가 — 계산서 14종 · 인허가 7 · 근거 17행(건축법 시행령 행에 제34조 · 제35조 · 제46조 · 제89조 · 제90조 · 제119조 · 피난방화규칙 · 설비규칙 행, LawMCP 2026-11-26 대조, §25-6-120) / 1.0.40 (2026-11-25) 헤더 고정 — 분류 탭 줄 sticky(태블릿 · 데스크톱만, 휴대폰 고정 없음 · 공통 원본 MM-HEADER v1.0 · 67.개발자료[헤더고정]) · 생성 때 MM-HEADER 구간 보존 / 1.0.39 (2026-11-25) 카드 판 35 용도변경 6.1.5 · 32 해체감리 6.1.4 · 48 안전대가 6.1.4 · 33 상주감리 6.1.6 · 근거표 전 행 대조 2026-11-25(편의법 2026-11-12 시행 · 조문 제목 · 해체 고시 정식 이름 · 지침 제55~62조 · 별표 21~27) · 건축법 제61조 「개정 시행」(건축 4차 교차검증 반영, §25-6-112) / 1.0.38 (2026-11-24) 카드 판 30 공공대가 · 34 공기산정 6.1.5 · 근거표 엔지니어링사업대가의 기준 고시 2026-11-20 시행(제2026-124호)(건축 3차 교차검증 반영 · 매뉴얼 Ver-6.1, §25-6-111) / 1.0.37 (2026-11-24) 카드 판 36 국토이용 6.1.4 · 39 성능지표 6.1.5 · 31 열관류율 6.1.6(건축 2차 교차검증 반영 · 매뉴얼 Ver-6.1, §25-6-110) / 1.0.36 (2026-11-24) 카드 판 38 일조사선 · 43 편의시설 6.1.4 · 40 주차장법 6.1.5(건축 1차 교차검증 반영 · 매뉴얼 Ver-6.1, §25-6-109) / 1.0.35 (2026-11-24) 카드 판 44 허가조서 6.1.23(건축법 제61조 개정 메모 · 매뉴얼 v6.1.23, §25-6-108) / 1.0.34 (2026-11-20) 카드 판 32 해체감리 6.1.3 · 33 상주감리 6.1.5 · 48 안전대가 6.1.3(노임 적용연도 선택 · 매뉴얼 Ver-6.1, §25-6-98) / 1.0.33 (2026-11-20) 카드 판 44 허가조서 6.1.22(PDF 읽기 보강 · 매뉴얼 개정, §25-6-97) / 1.0.32 (2026-11-19) 카드 판 35 용도변경 6.1.4 · 44 허가조서 6.1.19(기록 누락 정리 · §25-6-96) / 1.0.31 (2026-11-14) 카드 판 44 허가조서 6.1.18(한국건축규정 적용 고시 날짜별 표기, §25-6-93) / 1.0.30 (2026-11-13) 카드 판 44 허가조서 6.1.17(1112 대조 개선 · 세부 호 자동 선택 · 매뉴얼 개정, §25-6-92) / 1.0.29 (2026-11-13) 카드 판 44 허가조서 6.1.16(자동 선판정 전체 항목 · 매뉴얼 개정, §25-6-91) / 1.0.28 (2026-11-13) 카드 판 44 허가조서 6.1.12(조례 별표 9곳 · 천안 건폐율 · 용적률, §25-6-90) / 1.0.27 (2026-11-13) 카드 판 44 허가조서 6.1.11(html2canvas SRI, §25-6-89) / 1.0.26 (2026-11-13) 카드 판 44 허가조서 6.1.10(전남 · 충남 조례 51곳, §25-6-88) / 1.0.25 (2026-11-12) 카드 판 12종 한 단계씩(html2canvas SRI, 정밀검토 B8 · §25-6-87) / 1.0.24 (2026-11-12) 카드 판 13종 한 단계씩 · 포털 자체 Pretendard SRI(CDN 판 통일 · SRI, 정밀검토 C2 · §25-6-82) / 1.0.23 (2026-11-12) 카드 판 35 · 36 · 38 · 40 · 31 · 39 · 30 · 33 · 34 한 단계씩(건물개요 원본 v1.3, 정밀검토 C10 · C4 · §25-6-80) / 1.0.22 (2026-11-12) 카드 판 30 · 35 · 39 · 33 6.1.1 · 31 6.1.2(화면 확대 허용 · 입력값 경고 표시, 정밀검토 B17 · B10 · §25-6-78 · 79) / 1.0.21 (2026-11-12) 카드 판 36 · 30 · 33 · 34 → 6.1 · 31 · 40 6.1.1(건물개요 공통 원본, 정밀검토 B5 · B6 · §25-6-76 · 77) / 1.0.20 (2026-11-12) 카드 판 31 열관류율 · 39 성능지표 · 32 해체감리 · 48 안전대가 → 6.1 · 43 편의시설 6.1.1(검색 설명 메타, 정밀검토 B15 · §25-6-75) / 1.0.19 (2026-11-12) 카드 판 40 주차장 → 6.1(제27조 표기 정리, 정밀검토 B13 · §25-6-74) / 1.0.18 (2026-11-12) 건축허가조사 및 검사조서(44) 추가 — 계산서 13종 · 인허가 6 · 건축법 행에 제27조 · 건축법 시행규칙 행 · 건축기본법 · 한국건축규정 행(§25-6-70) · 1.0.17 (2026-11-11) 카드 판 35 · 38 · 43 → 6.1(개정 메모 · 판 6.1, §25-6-68) · 근거표 건축법 · 시행령 2026-11-12 시행본 · 편의법 시행령 2026-11-10 · 1.0.16 (2026-11-09) 장애인 편의시설 v1.2.2(A4 인쇄 서명란 최하단 보완) · 1.0.15 (2026-11-09) 사용자 매뉴얼 Ver-1.1(계산서 12종 · 근거 13행 · 화면 재촬영) · 1.0.14 (2026-11-09) 장애인 편의시설 Ver 1.2(v1.2.1 — 증축 적용 범위 · 사용자 매뉴얼) · 매뉴얼 단추 표시(NO_MANUAL 해제) · 1.0.13 (2026-11-09) 장애인 편의시설 Ver 1.1(세부기준 그림 18) 반영 · 1.0.12 (2026-11-09) 장애인 편의시설 설치기준 검토(43) 추가 — 계산서 12종 · 인허가 5 · 장애인등편의법 행 · 매뉴얼 없는 도구는 매뉴얼 단추 생략(NO_MANUAL) / 1.0.11 (2026-11-09) 안전점검등 대가 산출기(48) 추가 — 계산서 11종 · 대가 5 · 시설물안전법 · 지침 고시 행 / 1.0.9 (2026-10-31) 생성기 동기화 — 24장 · 25-6 수정을 템플릿에 반영(출력 = 배포 index.html) / 종전 1.0.0 (2026-10-30) 신설 — 계산서 10종 · 분류 3 · 근거 법령 · 앱 설치 단추 · 사용자 매뉴얼 연결
+VER = "1.0.43"  # 1.0.43 (2026-11-27) 휴대폰(640px 이하) 근거 표 카드형 — 법령별 카드 · 조문 칩 · 적용 도구 번호 링크 배지(44px), 641px 이상 표 그대로 · 글자 불변 · MIN 「F1~F3 모두 승인」 / 1.0.42 (2026-11-27) 카드 판 44 허가조서 6.1.28 · 설명에 별지 제24호서식(사용승인조서) · 근거표 건축법 제16조 · 제26조, 시행령 제12조 ③, 시행규칙 제20조 · 별표 5 · 별지 제24호서식(준공 설계개요 선판정, LawMCP 2026-11-27 대조, §25-6-122) / 1.0.41 (2026-11-26) 건축 설계검토(49) 추가 — 계산서 14종 · 인허가 7 · 근거 17행(건축법 시행령 행에 제34조 · 제35조 · 제46조 · 제89조 · 제90조 · 제119조 · 피난방화규칙 · 설비규칙 행, LawMCP 2026-11-26 대조, §25-6-120) / 1.0.40 (2026-11-25) 헤더 고정 — 분류 탭 줄 sticky(태블릿 · 데스크톱만, 휴대폰 고정 없음 · 공통 원본 MM-HEADER v1.0 · 67.개발자료[헤더고정]) · 생성 때 MM-HEADER 구간 보존 / 1.0.39 (2026-11-25) 카드 판 35 용도변경 6.1.5 · 32 해체감리 6.1.4 · 48 안전대가 6.1.4 · 33 상주감리 6.1.6 · 근거표 전 행 대조 2026-11-25(편의법 2026-11-12 시행 · 조문 제목 · 해체 고시 정식 이름 · 지침 제55~62조 · 별표 21~27) · 건축법 제61조 「개정 시행」(건축 4차 교차검증 반영, §25-6-112) / 1.0.38 (2026-11-24) 카드 판 30 공공대가 · 34 공기산정 6.1.5 · 근거표 엔지니어링사업대가의 기준 고시 2026-11-20 시행(제2026-124호)(건축 3차 교차검증 반영 · 매뉴얼 Ver-6.1, §25-6-111) / 1.0.37 (2026-11-24) 카드 판 36 국토이용 6.1.4 · 39 성능지표 6.1.5 · 31 열관류율 6.1.6(건축 2차 교차검증 반영 · 매뉴얼 Ver-6.1, §25-6-110) / 1.0.36 (2026-11-24) 카드 판 38 일조사선 · 43 편의시설 6.1.4 · 40 주차장법 6.1.5(건축 1차 교차검증 반영 · 매뉴얼 Ver-6.1, §25-6-109) / 1.0.35 (2026-11-24) 카드 판 44 허가조서 6.1.23(건축법 제61조 개정 메모 · 매뉴얼 v6.1.23, §25-6-108) / 1.0.34 (2026-11-20) 카드 판 32 해체감리 6.1.3 · 33 상주감리 6.1.5 · 48 안전대가 6.1.3(노임 적용연도 선택 · 매뉴얼 Ver-6.1, §25-6-98) / 1.0.33 (2026-11-20) 카드 판 44 허가조서 6.1.22(PDF 읽기 보강 · 매뉴얼 개정, §25-6-97) / 1.0.32 (2026-11-19) 카드 판 35 용도변경 6.1.4 · 44 허가조서 6.1.19(기록 누락 정리 · §25-6-96) / 1.0.31 (2026-11-14) 카드 판 44 허가조서 6.1.18(한국건축규정 적용 고시 날짜별 표기, §25-6-93) / 1.0.30 (2026-11-13) 카드 판 44 허가조서 6.1.17(1112 대조 개선 · 세부 호 자동 선택 · 매뉴얼 개정, §25-6-92) / 1.0.29 (2026-11-13) 카드 판 44 허가조서 6.1.16(자동 선판정 전체 항목 · 매뉴얼 개정, §25-6-91) / 1.0.28 (2026-11-13) 카드 판 44 허가조서 6.1.12(조례 별표 9곳 · 천안 건폐율 · 용적률, §25-6-90) / 1.0.27 (2026-11-13) 카드 판 44 허가조서 6.1.11(html2canvas SRI, §25-6-89) / 1.0.26 (2026-11-13) 카드 판 44 허가조서 6.1.10(전남 · 충남 조례 51곳, §25-6-88) / 1.0.25 (2026-11-12) 카드 판 12종 한 단계씩(html2canvas SRI, 정밀검토 B8 · §25-6-87) / 1.0.24 (2026-11-12) 카드 판 13종 한 단계씩 · 포털 자체 Pretendard SRI(CDN 판 통일 · SRI, 정밀검토 C2 · §25-6-82) / 1.0.23 (2026-11-12) 카드 판 35 · 36 · 38 · 40 · 31 · 39 · 30 · 33 · 34 한 단계씩(건물개요 원본 v1.3, 정밀검토 C10 · C4 · §25-6-80) / 1.0.22 (2026-11-12) 카드 판 30 · 35 · 39 · 33 6.1.1 · 31 6.1.2(화면 확대 허용 · 입력값 경고 표시, 정밀검토 B17 · B10 · §25-6-78 · 79) / 1.0.21 (2026-11-12) 카드 판 36 · 30 · 33 · 34 → 6.1 · 31 · 40 6.1.1(건물개요 공통 원본, 정밀검토 B5 · B6 · §25-6-76 · 77) / 1.0.20 (2026-11-12) 카드 판 31 열관류율 · 39 성능지표 · 32 해체감리 · 48 안전대가 → 6.1 · 43 편의시설 6.1.1(검색 설명 메타, 정밀검토 B15 · §25-6-75) / 1.0.19 (2026-11-12) 카드 판 40 주차장 → 6.1(제27조 표기 정리, 정밀검토 B13 · §25-6-74) / 1.0.18 (2026-11-12) 건축허가조사 및 검사조서(44) 추가 — 계산서 13종 · 인허가 6 · 건축법 행에 제27조 · 건축법 시행규칙 행 · 건축기본법 · 한국건축규정 행(§25-6-70) · 1.0.17 (2026-11-11) 카드 판 35 · 38 · 43 → 6.1(개정 메모 · 판 6.1, §25-6-68) · 근거표 건축법 · 시행령 2026-11-12 시행본 · 편의법 시행령 2026-11-10 · 1.0.16 (2026-11-09) 장애인 편의시설 v1.2.2(A4 인쇄 서명란 최하단 보완) · 1.0.15 (2026-11-09) 사용자 매뉴얼 Ver-1.1(계산서 12종 · 근거 13행 · 화면 재촬영) · 1.0.14 (2026-11-09) 장애인 편의시설 Ver 1.2(v1.2.1 — 증축 적용 범위 · 사용자 매뉴얼) · 매뉴얼 단추 표시(NO_MANUAL 해제) · 1.0.13 (2026-11-09) 장애인 편의시설 Ver 1.1(세부기준 그림 18) 반영 · 1.0.12 (2026-11-09) 장애인 편의시설 설치기준 검토(43) 추가 — 계산서 12종 · 인허가 5 · 장애인등편의법 행 · 매뉴얼 없는 도구는 매뉴얼 단추 생략(NO_MANUAL) / 1.0.11 (2026-11-09) 안전점검등 대가 산출기(48) 추가 — 계산서 11종 · 대가 5 · 시설물안전법 · 지침 고시 행 / 1.0.9 (2026-10-31) 생성기 동기화 — 24장 · 25-6 수정을 템플릿에 반영(출력 = 배포 index.html) / 종전 1.0.0 (2026-10-30) 신설 — 계산서 10종 · 분류 3 · 근거 법령 · 앱 설치 단추 · 사용자 매뉴얼 연결
 CHECKED = "2026-11-25"          # 근거 조문 대조일
 BASE = "https://manminkim-eng.github.io"
 
@@ -135,8 +135,33 @@ def group(gid, gname, gsub):
     </div>
   </section>'''
 
+# 2026-11-27 모바일 표시 — 조문은 « · » 단위 칩, 적용 도구 번호는 도구 링크(글자 · 순서는 LAWS 그대로, 화면 641px 이상은 표 모양 그대로)
+def _split_arts(a):
+    out, buf, depth, i, dash = [], "", 0, 0, False   # dash: 괄호 밖 « — » 붙임 설명이 이 칩에 시작됨
+    while i < len(a):
+        c = a[i]
+        if c in "(（": depth += 1
+        elif c in ")）": depth = max(0, depth - 1)
+        if depth == 0 and a.startswith(" — ", i): dash = True
+        if depth == 0 and a.startswith(" · ", i):
+            rest = a[i + 3:]
+            keep = (re.match(r"제\d+[항호]", rest)                                   # 「제25조제8항 · 제9항」
+                    or (re.match(r"\d+(의\d+)?(\s|$|\()", rest) and not re.match(r"\d\d \d\d \d\d", rest))   # 「별표 1 · 3 · 5」(KDS 코드는 나눔)
+                    or (dash and not buf.endswith("대조")))                      # 「— 제16조 · 제26조 … 대조」 붙임 설명
+            if not keep:
+                out.append(buf); buf = ""; dash = False; i += 3; continue
+        buf += c; i += 1
+    out.append(buf)
+    return out
+def arts(a):
+    return '<span class="sep"> · </span>'.join(f'<span class="art">{e(x)}</span>' for x in _split_arts(a))
+_REPO = {t[0]: t[4] for t in TOOLS}
+def tools(t):
+    nums = [x.strip() for x in t.split("·")]
+    return '<span class="sep"> · </span>'.join(f'<a class="tno" href="../{_REPO[x]}/" aria-label="{x}번 계산서 열기">{x}</a>' if x in _REPO else e(x) for x in nums)
+
 law_rows = "".join(f'''
-        <tr><th scope="row">{e(n)}</th><td class="kind">{e(k)}</td><td class="cur">{nw(e(d))}</td><td>{e(a)}</td><td class="num">{e(t)}</td></tr>''' for n, k, d, a, t in LAWS)
+        <tr><th scope="row">{e(n)}</th><td class="kind">{e(k)}</td><td class="cur">{nw(e(d))}</td><td class="arts">{arts(a)}</td><td class="num tools">{tools(t)}</td></tr>''' for n, k, d, a, t in LAWS)
 
 tabs = f'<button class="tab on" data-tab="all" role="tab" aria-selected="true">전체 <span class="tn">{len(TOOLS)}</span></button>' + "".join(
     f'<button class="tab" data-tab="{g}" role="tab" aria-selected="false">{e(n)} <span class="tn">{sum(1 for t in TOOLS if t[1]==g)}</span></button>' for g, n, _ in GROUPS)
@@ -279,6 +304,27 @@ tbody th{{min-width:170px}}
 .note{{margin-top:14px;padding:14px 16px;border:1px solid var(--line2);border-left:3px solid var(--gold);border-radius:var(--radius);background:rgba(216,172,80,.05);font-size:var(--fs-sm)}}
 .note b{{color:var(--gold-lt)}}
 .note a{{color:var(--mech-lt)}}
+.law a.tno{{color:inherit;text-decoration:none}}
+.law a.tno:hover{{color:var(--pa-lt);text-decoration:underline}}
+/* 2026-11-27 휴대폰(640px 이하) — 근거 표를 법령별 카드로(글자 그대로, 표시만) */
+@media (max-width:640px){{
+  .law .tbl-wrap{{overflow:visible;border:0;background:transparent}}
+  .law table{{min-width:0;display:block}}
+  .law thead{{display:none}}
+  .law tbody{{display:grid;gap:10px}}
+  .law tbody tr{{display:block;background:var(--bg-card);border:1px solid var(--line);border-left:3px solid var(--pa);border-radius:var(--radius);padding:14px 14px 12px}}
+  .law tbody th,.law tbody td{{display:block;padding:0;border:0;min-width:0;white-space:normal}}
+  .law tbody th{{font-size:var(--fs-body);line-height:1.45;word-break:keep-all;margin-bottom:6px}}
+  .law tbody td:nth-of-type(1){{display:inline-block;font-family:var(--f-kr);font-size:var(--fs-cap);color:var(--pa-lt);border:1px solid var(--line2);border-radius:6px;padding:1px 7px;margin:0 6px 6px 0}}
+  .law tbody td:nth-of-type(2){{display:inline;font-family:var(--f-kr);font-size:var(--fs-cap);color:var(--t-sub);word-break:keep-all}}
+  .law tbody td:nth-of-type(2) .nw{{font-family:var(--f-mono)}}
+  .law td.arts{{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;font-size:var(--fs-sm);line-height:1.55}}
+  .law td.arts .sep,.law td.tools .sep{{display:none}}
+  .law td.arts .art{{background:var(--bg-deep);border:1px solid var(--line2);border-radius:6px;padding:3px 8px;word-break:keep-all}}
+  .law td.tools{{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-top:10px;padding-top:10px;border-top:1px dashed var(--line)}}
+  .law td.tools::before{{content:"적용 도구";font:600 var(--fs-cap) var(--f-kr);color:var(--t-sub);margin-right:4px}}
+  .law a.tno{{font:700 var(--fs-sm) var(--f-mono);min-width:44px;min-height:44px;display:inline-flex;align-items:center;justify-content:center;border-radius:8px;color:var(--pa-lt);background:rgba(var(--pa-rgb),.12);border:1px solid rgba(var(--pa-rgb),.35)}}
+}}
 
 /* FOOTER */
 .ft{{margin-top:48px;padding-top:22px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:var(--fs-sm);color:var(--t-sub)}}
