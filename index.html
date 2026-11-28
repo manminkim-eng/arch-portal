@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>ARCHITECT KIM MANMIN · 건축 계산서 통합 포털</title>
-<!-- 링크 미리보기(네이버 · 카카오 · SNS) — 2026-10-30 전수 정비 -->
+
 <link rel="canonical" href="https://manminkim-eng.github.io/arch-portal/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="MANMIN ENGINEERING">
@@ -34,11 +34,11 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" integrity="sha384-ei/b2Mz3F5J8nqTvpKS89CkzDCuD7Cc+/F+OsaPUKItzHgLNKnGq3rjtYq/B7RnO" crossorigin="anonymous">
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="./assets/fonts/manmin-fonts.css"><!-- 로컬 폴백 폰트 -->
+<link rel="stylesheet" href="./assets/fonts/manmin-fonts.css">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 :root{
-  /* MANMIN 4개 통합포털 공통 글자 크기 (2026-10-30 절충안 · 소방 규격 기반) */
+  
   --fs-badge:10.5px;--fs-cap:11.5px;--fs-sm:12.5px;--fs-desc:13px;--fs-body:14px;
   --fs-sec:16px;--fs-card:17px;--fs-stat:20px;--fs-title:clamp(16px,2.4vw,22px);--fs-brand:clamp(22px,4vw,42px);
   --bg:#0b1220;--bg-card:#121c30;--bg-deep:#080d18;
@@ -58,7 +58,6 @@ body{font-family:var(--f-kr);background:var(--bg);color:var(--t-body);line-heigh
 a{color:inherit}
 :focus-visible{outline:2px solid var(--gold);outline-offset:3px}
 
-/* HEADER */
 .hd{padding:52px 0 8px;text-align:center}
 .pill{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border:1px solid var(--line2);border-radius:999px;font-size:var(--fs-cap);color:var(--mech-lt);background:rgba(216,172,80,.06);font-weight:600}
 .pill i{width:7px;height:7px;border-radius:50%;background:#4ade80;box-shadow:0 0 0 3px rgba(74,222,128,.18)}
@@ -72,13 +71,11 @@ a{color:inherit}
 .lead{margin:12px auto 0;max-width:640px;font-size:var(--fs-body);color:var(--t-body)}
 .hline{width:120px;height:2px;margin:26px auto 0;background:linear-gradient(90deg,transparent,var(--mech),transparent)}
 
-/* STATS */
 .stats{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;margin:30px 0 26px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
 .st{background:var(--bg-card);padding:16px 12px;text-align:center}
 .st-n{font-family:'Orbitron',sans-serif;font-weight:900;font-size:var(--fs-stat);color:var(--t-high)}
 .st-l{font-size:var(--fs-cap);color:var(--t-sub)}
 
-/* TABS */
 .tabs{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-bottom:30px}
 .tab{font:600 var(--fs-body) var(--f-kr);color:var(--t-sub);background:var(--bg-card);border:1px solid var(--line2);border-radius:999px;min-height:44px;padding:0 18px;cursor:pointer;display:inline-flex;align-items:center;gap:8px;transition:.2s}
 .tab:hover{color:var(--t-high);border-color:var(--mech)}
@@ -87,7 +84,6 @@ a{color:inherit}
 .tab-law{text-decoration:none}
 .tab-man{border-color:#9cc3f5;color:#c8dcf8}.tab-man:hover{border-color:#c8dcf8;color:var(--t-high)}
 
-/* GROUP */
 .grp{margin-bottom:40px}
 .grp-hd{display:flex;align-items:center;gap:12px;margin-bottom:16px;flex-wrap:wrap}
 .grp-tag{font-weight:800;color:var(--t-high);font-size:var(--fs-sec);padding-left:12px;border-left:3px solid var(--mech)}
@@ -95,7 +91,6 @@ a{color:inherit}
 .grp-n{margin-left:auto;font-family:var(--f-mono);font-size:var(--fs-cap);color:var(--t-sub)}
 .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
 
-/* CARD */
 .tcard{position:relative;display:flex;flex-direction:column;background:var(--bg-card);border:1px solid var(--line);border-radius:var(--radius);padding:22px 22px 18px;text-decoration:none;box-shadow:var(--shadow);transition:transform .22s,border-color .22s,box-shadow .22s;overflow:hidden}
 .tcard::before{content:"";position:absolute;left:0;right:0;top:0;height:3px;background:linear-gradient(90deg,var(--acc),transparent);opacity:.85}
 .tcard:hover{transform:translateY(-4px);border-color:var(--acc);box-shadow:0 12px 32px rgba(0,0,0,.45)}
@@ -116,7 +111,6 @@ a{color:inherit}
 .tcard:hover .arw{transform:translateX(4px)}
 .grp.off{display:none}
 
-/* LAW */
 .law{margin-top:12px;scroll-margin-top:20px}
 .law-hd{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:12px}
 .law-hd h2{font-size:var(--fs-sec);font-weight:800;color:var(--t-high);letter-spacing:-.02em}
@@ -137,7 +131,7 @@ tbody th{min-width:170px}
 .note a{color:var(--mech-lt)}
 .law a.tno{color:inherit;text-decoration:none}
 .law a.tno:hover{color:var(--pa-lt);text-decoration:underline}
-/* 2026-11-27 휴대폰(640px 이하) — 근거 표를 법령별 카드로(글자 그대로, 표시만) */
+
 @media (max-width:640px){
   .law .tbl-wrap{overflow:visible;border:0;background:transparent}
   .law table{min-width:0;display:block}
@@ -157,12 +151,10 @@ tbody th{min-width:170px}
   .law a.tno{font:700 var(--fs-sm) var(--f-mono);min-width:44px;min-height:44px;display:inline-flex;align-items:center;justify-content:center;border-radius:8px;color:var(--pa-lt);background:rgba(var(--pa-rgb),.12);border:1px solid rgba(var(--pa-rgb),.35)}
 }
 
-/* FOOTER */
 .ft{margin-top:48px;padding-top:22px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:var(--fs-sm);color:var(--t-sub)}
 .ft a{color:var(--mech-lt)}
 .ft .mono{font-family:var(--f-mono)}
 
-/* 앱 설치 */
 .tab-inst{font-weight:700}
 .tab-inst svg{width:15px;height:15px;flex-shrink:0}
 .pwa-bar{position:fixed;left:50%;bottom:16px;transform:translateX(-50%);z-index:40;width:min(560px,calc(100% - 32px));display:flex;align-items:center;gap:12px;
@@ -186,7 +178,6 @@ tbody th{min-width:170px}
 .ios-act{display:flex;gap:8px;justify-content:flex-end}
 [hidden]{display:none!important}
 
-/* 5단계 반응형 */
 @media (max-width:1240px){.wrap{max-width:100%}}
 @media (max-width:1024px){.grid{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:760px){.stats{grid-template-columns:repeat(3,1fr)}.st:nth-child(n+4){grid-column:span 1}}
@@ -207,10 +198,8 @@ tbody th{min-width:170px}
 @media print{.bg,.tabs,.pwa-bar,.ios-guide{display:none!important}body{background:#fff;color:#111}.tcard,.tbl-wrap,.st{background:#fff;box-shadow:none;break-inside:avoid}
   .tc-name,.ttl,.law-hd h2,tbody th,.st-n,.brand-n{color:#111}.grp.off{display:block}}
 
-/* 모바일 최소 11px 하한 (2026-10-30 · 4개 포털 공통) */
 @media (max-width:640px){:root{--fs-badge:11px}}
 
-/* ══ 4개 통합포털 헤더·버튼 통일 (2026-10-30) — 구조·치수는 공통, 색상만 포털별 ══ */
 :root{--pa:#d8ac50;--pa-lt:#f1cd7c;--pa-deep:#785a28;--pa-rgb:216,172,80;--bg:#110e08;--bg-card:#1a1610;--bg-deep:#0b0905;--line:#3a3020;--line2:#55452a;--t-body:#d4cbb8;--t-sub:#a89a80;}
 .hd{padding:52px 0 0}
 .pill{gap:7px;padding:5px 16px 5px 12px;border:1px solid rgba(var(--pa-rgb),.28);background:rgba(var(--pa-rgb),.08);color:var(--pa-lt);letter-spacing:.1em;text-transform:uppercase;margin-bottom:16px;line-height:1.4}
@@ -483,7 +472,7 @@ tbody th{min-width:170px}
 </section>
 
 <footer class="ft">
-  <span>© 2026 김만민 건축사 · (주)대성건축사사무소 — <a href="https://manminkim-eng.github.io/KIMMANMIN/" target="_blank" rel="noopener">MANMIN 홈페이지</a></span>
+  <span>© 2026 김만민 건축사 · (주)대성건축사사무소 · 무단 복제 · 재배포 금지 — <a href="https://manminkim-eng.github.io/KIMMANMIN/" target="_blank" rel="noopener">MANMIN 홈페이지</a></span>
   <span class="mono">ARCH PORTAL · Ver 1.0</span>
 </footer>
 </div>
@@ -507,133 +496,10 @@ tbody th{min-width:170px}
   </div>
 </div>
 
-<script>
-(function(){
-  var tabs=document.querySelectorAll('.tab[data-tab]'),grps=document.querySelectorAll('.grp');
-  tabs.forEach(function(t){t.addEventListener('click',function(){
-    var k=t.getAttribute('data-tab');
-    tabs.forEach(function(x){var on=x===t;x.classList.toggle('on',on);x.setAttribute('aria-selected',on?'true':'false');});
-    grps.forEach(function(g){g.classList.toggle('off',k!=='all'&&g.getAttribute('data-g')!==k);});
-  });});
-  function go(el,ev){ev.preventDefault();ev.stopPropagation();window.open(el.getAttribute('data-href'),'_blank','noopener');}
-  document.querySelectorAll('.tc-man').forEach(function(m){
-    m.addEventListener('click',function(ev){go(m,ev);});
-    m.addEventListener('keydown',function(ev){if(ev.key==='Enter'||ev.key===' ')go(m,ev);});
-  });
-  if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('./sw.js').catch(function(){});});}
+<script>!function(){var e=document.querySelectorAll(".tab[data-tab]"),t=document.querySelectorAll(".grp");function n(e,t){t.preventDefault(),t.stopPropagation(),window.open(e.getAttribute("data-href"),"_blank","noopener")}e.forEach(function(n){n.addEventListener("click",function(){var i=n.getAttribute("data-tab");e.forEach(function(e){var t=e===n;e.classList.toggle("on",t),e.setAttribute("aria-selected",t?"true":"false")}),t.forEach(function(e){e.classList.toggle("off","all"!==i&&e.getAttribute("data-g")!==i)})})}),document.querySelectorAll(".tc-man").forEach(function(e){e.addEventListener("click",function(t){n(e,t)}),e.addEventListener("keydown",function(t){"Enter"!==t.key&&" "!==t.key||n(e,t)})}),"serviceWorker"in navigator&&window.addEventListener("load",function(){navigator.serviceWorker.register("./sw.js").catch(function(){})});var i=document.getElementById("pwa-inst"),o=document.getElementById("pwa-bar"),a=document.getElementById("pwa-yes"),d=document.getElementById("pwa-no"),c=document.getElementById("ios-guide"),r=document.getElementById("ios-ok"),u=null,s=null,l=window.matchMedia&&matchMedia("(display-mode: standalone)").matches||!0===navigator.standalone,f=/iPad|iPhone|iPod/.test(navigator.userAgent)||"MacIntel"===navigator.platform&&navigator.maxTouchPoints>1;function m(e,t){try{if(void 0===t)return sessionStorage.getItem(e);sessionStorage.setItem(e,t)}catch(e){return null}}function g(){l||m("ap-inst-bar")||setTimeout(function(){l||!u&&!f||(o.hidden=!1)},2e3)}function v(){i.hidden=!0,o.hidden=!0}function h(){c.hidden=!0,s&&s.focus&&s.focus()}function E(){u?(o.hidden=!0,u.prompt(),u.userChoice.then(function(e){"accepted"===e.outcome&&v(),u=null,"accepted"!==e.outcome&&(i.hidden=!0)})):f&&(s=document.activeElement,o.hidden=!0,c.hidden=!1,r.focus())}l||(window.addEventListener("beforeinstallprompt",function(e){e.preventDefault(),u=e,i.hidden=!1,g()}),f&&(i.hidden=!1,g())),window.addEventListener("appinstalled",function(){u=null,v()}),i.addEventListener("click",E),a.addEventListener("click",E),d.addEventListener("click",function(){o.hidden=!0,m("ap-inst-bar","1")}),r.addEventListener("click",h),c.addEventListener("click",function(e){e.target===c&&h()}),document.addEventListener("keydown",function(e){"Escape"!==e.key||c.hidden||h()})}();</script>
 
-  /* 앱 설치 — 지원 브라우저: beforeinstallprompt · 아이폰/아이패드: 안내 상자 · 설치된 앱 화면: 숨김 */
-  var inst=document.getElementById('pwa-inst'),bar=document.getElementById('pwa-bar'),
-      yes=document.getElementById('pwa-yes'),no=document.getElementById('pwa-no'),
-      ios=document.getElementById('ios-guide'),iosOk=document.getElementById('ios-ok'),dp=null,last=null;
-  var standalone=(window.matchMedia&&matchMedia('(display-mode: standalone)').matches)||navigator.standalone===true;
-  var isIOS=/iPad|iPhone|iPod/.test(navigator.userAgent)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1);
-  function ss(k,v){try{if(v===undefined)return sessionStorage.getItem(k);sessionStorage.setItem(k,v);}catch(e){return null;}}
-  function showBar(){if(standalone||ss('ap-inst-bar'))return;setTimeout(function(){if(!standalone&&(dp||isIOS))bar.hidden=false;},2000);}
-  function hideAll(){inst.hidden=true;bar.hidden=true;}
-  function openIOS(){last=document.activeElement;bar.hidden=true;ios.hidden=false;iosOk.focus();}
-  function closeIOS(){ios.hidden=true;if(last&&last.focus)last.focus();}
-  function doInstall(){
-    if(dp){bar.hidden=true;dp.prompt();dp.userChoice.then(function(c){if(c.outcome==='accepted')hideAll();dp=null;if(c.outcome!=='accepted')inst.hidden=true;});}
-    else if(isIOS){openIOS();}
-  }
-  if(!standalone){
-    window.addEventListener('beforeinstallprompt',function(e){e.preventDefault();dp=e;inst.hidden=false;showBar();});
-    if(isIOS){inst.hidden=false;showBar();}
-  }
-  window.addEventListener('appinstalled',function(){dp=null;hideAll();});
-  inst.addEventListener('click',doInstall);yes.addEventListener('click',doInstall);
-  no.addEventListener('click',function(){bar.hidden=true;ss('ap-inst-bar','1');});
-  iosOk.addEventListener('click',closeIOS);
-  ios.addEventListener('click',function(e){if(e.target===ios)closeIOS();});
-  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!ios.hidden)closeIOS();});
-})();
-</script>
-<!-- MM-HEADER:BEGIN v1.1 -->
 <style id="mm-header-local">@media (min-width:768px) and (min-height:600px){.mm-hdr{background:var(--bg);padding:10px 0;box-shadow:0 8px 12px -10px rgba(0,0,0,.6)}@media(max-width:1024px){.mm-hdr{flex-wrap:nowrap;overflow-x:auto;justify-content:flex-start;scrollbar-width:none}.mm-hdr::-webkit-scrollbar{display:none}.mm-hdr>.tab{flex-shrink:0}}}</style>
-<script id="mm-header-js" data-shell="nav.tabs">
-/* manmin-header.js v1.1 — MANMIN 공통 헤더 고정 원본 (2026-11-25, MIN 「추천안대로 진행해줘」 — 데스크톱 · 태블릿만 고정, 휴대폰은 고정 없이)
-   v1.1 보강 — matchMedia 없는 브라우저는 고정하지 않음 · check.py 주입 누락 = 실패(Codex 지적, MIN 「1~3 모두 승인」)
-   v1.0 (2026-11-25, MIN 「추천안대로 승인」) — 처음 판(모든 화면 고정)
-   직접 고치지 말 것: 도구에는 inject.py 로만 넣고 check.py 로 확인한다(MM-PRINT · MM-PROJECT 와 같은 방식).
-   동작
-   - 고정 화면 조건(MQ, 아래 기본값: 폭 768px 이상 + 높이 600px 이상 = 태블릿 · 데스크톱)에서만 작동한다.
-     휴대폰(세로 · 가로 모두)은 조건 밖 → 머리가 지금처럼 스크롤과 함께 올라가고, 도구별 css 도 적용되지 않는다(화면이 원래와 같음).
-     화면을 돌리거나 창 크기가 바뀌어 조건이 바뀌면 그 자리에서 고정/해제가 바뀐다.
-   - data-shell 로 찾은 머리 덩어리(머리 + 탭)를 position:sticky; top:0 으로 붙인다.
-   - 내려서 머리 높이 차(Δ = 전체 − 접힘)만큼 지나면 .mm-hdr-c 를 붙여 data-hide 요소를 숨긴다(접힘).
-     접힐 때 줄어든 Δ 만큼 margin-bottom 을 주어 문서 높이를 그대로 둔다 → 내용이 튀지 않고, 스크롤 고정(앵커링) 때문에 접힘/펼침이 되풀이되지 않는다.
-   - 지금 보이는 머리 높이를 --mm-hdr-h 로 내보낸다(조건 밖이면 0) → html scroll-padding-top(앵커 · scrollIntoView 가림 방지)와 도구의 다른 sticky 패널이 쓴다.
-   - 인쇄 · JPG 출력에는 영향 없음(@media print 에서 static, 머리는 원래 no-print).
-   설정(script 태그 속성 · tools.json): data-shell(필수, CSS 선택자) · data-hide(접힐 때 숨길 요소, 없으면 접지 않고 붙이기만) · data-mq(고정 화면 조건, 없으면 MQ 기본값)
-   도구별 접힘 여백 등은 tools.json "css" → 같은 구간 안 <style id="mm-header-local"> 로 들어가며, inject 가 같은 MQ 조건(@media)으로 감싼다. */
-(function () {
-  var MQ_DEFAULT = '(min-width:768px) and (min-height:600px)';
-  var S = document.currentScript;
-  var SEL = S.getAttribute('data-shell'), HIDE = S.getAttribute('data-hide') || '', MQ = S.getAttribute('data-mq') || MQ_DEFAULT;
-  if (!SEL || !window.matchMedia) return;   /* matchMedia 모르는 옛 브라우저 → 스타일도 넣지 않고 지금처럼(휴대폰과 같게) */
-  var st = document.createElement('style');
-  st.id = 'mm-header-css';
-  st.textContent =
-    '@media ' + MQ + '{' +
-      '.mm-hdr{position:-webkit-sticky;position:sticky;top:0;z-index:1100}' +
-      'html{scroll-padding-top:calc(var(--mm-hdr-h,0px) + 8px)}' +
-      (HIDE ? '.mm-hdr.mm-hdr-c :is(' + HIDE + '){display:none!important}' : '') +
-    '}' +
-    '@media print{.mm-hdr{position:static!important;margin-bottom:0!important}html{scroll-padding-top:0!important}}';
-  document.head.appendChild(st);
-  var mql = window.matchMedia(MQ);
-  function active() { return mql.matches; }
-  var el = null, full = 0, comp = 0, on = false, raf = 0, lastW = 0;
-  function setVar() {
-    document.documentElement.style.setProperty('--mm-hdr-h', active() ? (on ? comp : full) + 'px' : '0px');
-  }
-  function apply(want) {
-    on = want;
-    el.classList.toggle('mm-hdr-c', on);
-    el.style.marginBottom = on ? (full - comp) + 'px' : '';
-    setVar();
-  }
-  function measure() {
-    var was = on;
-    el.classList.remove('mm-hdr-c'); el.style.marginBottom = '';
-    if (!active()) { on = false; full = comp = 0; setVar(); return; }   /* 휴대폰: 고정 · 접힘 없음 */
-    full = el.offsetHeight;
-    if (HIDE) { el.classList.add('mm-hdr-c'); comp = el.offsetHeight; el.classList.remove('mm-hdr-c'); } else comp = full;
-    on = false; apply(was && full - comp > 4); update();
-  }
-  function update() {
-    raf = 0;
-    if (!el || !active()) return;
-    var d = full - comp, want = d > 4 && (window.pageYOffset || document.documentElement.scrollTop) > d;
-    if (want !== on) apply(want);
-  }
-  function onScroll() { if (!raf) raf = requestAnimationFrame(update); }
-  function onResize() {
-    var w = window.innerWidth;
-    if (w === lastW) return;          /* 아이폰 주소창 높이 변화(폭 그대로)는 무시 — 높이 조건이 바뀌면 아래 mql 변화로 처리 */
-    lastW = w; measure();
-  }
-  function init() {
-    try { el = document.querySelector(SEL); } catch (e) { el = null; return true; }   /* :has() 모르는 옛 브라우저 → 고정 없이 지금처럼 */
-    if (!el) return false;
-    el.classList.add('mm-hdr');
-    lastW = window.innerWidth; measure();
-    window.addEventListener('scroll', onScroll, { passive: true });
-    window.addEventListener('resize', onResize);
-    if (mql.addEventListener) mql.addEventListener('change', measure); else if (mql.addListener) mql.addListener(measure);   /* 화면 돌림 · 창 크기로 조건이 바뀔 때 */
-    if (document.fonts && document.fonts.ready) document.fonts.ready.then(measure);   /* 글꼴 늦게 오면 높이 다시 */
-    window.addEventListener('load', measure);
-    return true;
-  }
-  if (!init()) {                        /* React 도구: 머리가 늦게 그려지면 나타날 때까지 기다림 */
-    var mo = new MutationObserver(function () { if (init()) mo.disconnect(); });
-    mo.observe(document.documentElement, { childList: true, subtree: true });
-    setTimeout(function () { mo.disconnect(); }, 15000);
-  }
-  window.mmHeaderRemeasure = function () { if (el) measure(); };
-})();
-</script>
-<!-- MM-HEADER:END -->
+<script id="mm-header-js" data-shell="nav.tabs">!function(){var t=document.currentScript,e=t.getAttribute("data-shell"),n=t.getAttribute("data-hide")||"",i=t.getAttribute("data-mq")||"(min-width:768px) and (min-height:600px)";if(e&&window.matchMedia){var d=document.createElement("style");d.id="mm-header-css",d.textContent="@media "+i+"{.mm-hdr{position:-webkit-sticky;position:sticky;top:0;z-index:1100}html{scroll-padding-top:calc(var(--mm-hdr-h,0px) + 8px)}"+(n?".mm-hdr.mm-hdr-c :is("+n+"){display:none!important}":"")+"}@media print{.mm-hdr{position:static!important;margin-bottom:0!important}html{scroll-padding-top:0!important}}",document.head.appendChild(d);var o=window.matchMedia(i),r=null,m=0,a=0,s=!1,c=0,u=0;if(!y()){var l=new MutationObserver(function(){y()&&l.disconnect()});l.observe(document.documentElement,{childList:!0,subtree:!0}),setTimeout(function(){l.disconnect()},15e3)}window.mmHeaderRemeasure=function(){r&&w()}}function h(){return o.matches}function p(){document.documentElement.style.setProperty("--mm-hdr-h",h()?(s?a:m)+"px":"0px")}function f(t){s=t,r.classList.toggle("mm-hdr-c",s),r.style.marginBottom=s?m-a+"px":"",p()}function w(){var t=s;if(r.classList.remove("mm-hdr-c"),r.style.marginBottom="",!h())return s=!1,m=a=0,void p();m=r.offsetHeight,n?(r.classList.add("mm-hdr-c"),a=r.offsetHeight,r.classList.remove("mm-hdr-c")):a=m,s=!1,f(t&&m-a>4),v()}function v(){if(c=0,r&&h()){var t=m-a,e=t>4&&(window.pageYOffset||document.documentElement.scrollTop)>t;e!==s&&f(e)}}function g(){c||(c=requestAnimationFrame(v))}function L(){var t=window.innerWidth;t!==u&&(u=t,w())}function y(){try{r=document.querySelector(e)}catch(t){return r=null,!0}return!!r&&(r.classList.add("mm-hdr"),u=window.innerWidth,w(),window.addEventListener("scroll",g,{passive:!0}),window.addEventListener("resize",L),o.addEventListener?o.addEventListener("change",w):o.addListener&&o.addListener(w),document.fonts&&document.fonts.ready&&document.fonts.ready.then(w),window.addEventListener("load",w),!0)}}();</script>
+
 </body>
 </html>
